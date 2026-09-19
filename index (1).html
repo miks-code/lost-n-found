@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FindIt | ICCT Lost & Found</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!PUBLIC HOMEPAGE>
+  <div id="publicView" class="view">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+
+    <header class="public-header">
+      <a href="#" class="brand" data-page="home">
+        <img src="assets/logo.png" alt="FindIt logo">
+        <span>FindIt</span>
+      </a>
+
+      <nav class="public-nav">
+        <a href="#" class="nav-link active" data-page="home">Home</a>
+        <a href="#" class="nav-link" data-page="about">About</a>
+        <button class="nav-btn login-btn" type="button">Login</button>
+        <button class="nav-btn signup-btn" type="button">Sign Up</button>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </header>
+
+    <main>
+      <!-- HOME -->
+      <section id="homePage" class="public-page active-page">
+        <div class="hero-content">
+          <p class="eyebrow">ICCT COLLEGES • CAINTA (MAIN) CAMPUS</p>
+          <h1>Welcome to <span>FindIt!</span></h1>
+          <p class="hero-text">
+            Lost something? Found something?<br>
+            We're here to help you reconnect with your belongings.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-btn login-btn" type="button">Get Started</button>
+            <button class="text-btn" type="button" data-page="about">Learn More →</button>
+          </div>
+        </div>
+
+        <div class="quick-info">
+          <div class="info-card">
+            <strong>Report</strong>
+            <span>Lost or found items</span>
+          </div>
+          <div class="info-card">
+            <strong>Search</strong>
+            <span>Browse reported items</span>
+          </div>
+          <div class="info-card">
+            <strong>Reconnect</strong>
+            <span>Message and claim</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="aboutPage" class="public-page">
+        <div class="about-wrap">
+          <div class="about-card">
+            <span class="about-label">ABOUT FINDIT</span>
+            <h2>Helping ICCT belongings find their way back.</h2>
+            <p>
+              FindIt is a web-based Lost and Found System for the ICCT community.
+              It provides a simple place where students, faculty, and staff can
+              report lost items, post found items, search records, contact item
+              owners, and submit claim requests.
+            </p>
+
+            <div class="how-grid">
+              <div><b>01</b><h3>Report</h3><p>Post a lost or found item with its details.</p></div>
+              <div><b>02</b><h3>Search</h3><p>Look through reported items using keywords and filters.</p></div>
+              <div><b>03</b><h3>Connect</h3><p>Message the person who reported the item.</p></div>
+              <div><b>04</b><h3>Claim</h3><p>Submit a claim request when an item belongs to you.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- LOGIN / SIGN UP OVER THE SAME CAMPUS BACKGROUND -->
+  <div id="authView" class="auth-view hidden">
+    <div class="auth-bg"></div>
+    <div class="auth-overlay"></div>
+
+    <header class="public-header auth-header">
+      <a href="#" class="brand" id="backHome">
+        <img src="assets/logo.png" alt="FindIt logo">
+        <span>FindIt</span>
+      </a>
+      <nav class="public-nav">
+        <button class="nav-link home-auth" type="button">Home</button>
+        <button class="nav-link about-auth" type="button">About</button>
+        <button class="nav-btn login-btn auth-nav-login" type="button">Login</button>
+        <button class="nav-btn signup-btn auth-nav-signup" type="button">Sign Up</button>
+      </nav>
+    </header>
+
+    <div class="auth-center">
+      <!-- LOGIN -->
+      <form id="loginForm" class="auth-card">
+        <img class="auth-logo" src="assets/logo.png" alt="FindIt">
+        <h2>Welcome back!</h2>
+        <p class="auth-subtitle">Log in to report or search lost and found items.</p>
+
+        <label for="loginEmail">School Email</label>
+        <input id="loginEmail" type="email" placeholder="yourname@icct.edu.ph" required>
+
+        <label for="loginPassword">Password</label>
+        <div class="password-box">
+          <input id="loginPassword" type="password" placeholder="Enter your password" required>
+          <button class="eye-btn" type="button" data-target="loginPassword">◉</button>
+        </div>
+
+        <div class="auth-options">
+          <label class="remember"><input type="checkbox"> <span>Remember me</span></label>
+          <button type="button" class="forgot-btn">Forgot password?</button>
+        </div>
+
+        <button class="dark-btn" type="submit">Login</button>
+        <p class="switch-auth">Don't have an account? <button type="button" id="toSignup">Sign up</button></p>
+        <p id="loginMessage" class="form-message"></p>
+      </form>
+
+      <!-- SIGN UP -->
+      <form id="signupForm" class="auth-card hidden">
+        <img class="auth-logo" src="assets/logo.png" alt="FindIt">
+        <h2>Create an account</h2>
+        <p class="auth-subtitle">Join FindIt and help reconnect lost belongings.</p>
+
+        <label for="signupName">Full Name</label>
+        <input id="signupName" type="text" placeholder="Enter your full name" required>
+
+        <label for="signupEmail">School Email</label>
+        <input id="signupEmail" type="email" placeholder="yourname@icct.edu.ph" required>
+
+        <label for="signupPassword">Password</label>
+        <div class="password-box">
+          <input id="signupPassword" type="password" placeholder="Create a password" required>
+          <button class="eye-btn" type="button" data-target="signupPassword">◉</button>
+        </div>
+
+        <label for="signupConfirm">Confirm Password</label>
+        <div class="password-box">
+          <input id="signupConfirm" type="password" placeholder="Confirm your password" required>
+          <button class="eye-btn" type="button" data-target="signupConfirm">◉</button>
+        </div>
+
+        <button class="dark-btn" type="submit">Create Account</button>
+        <p class="switch-auth">Already have an account? <button type="button" id="toLogin">Login</button></p>
+        <p id="signupMessage" class="form-message"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- LOGGED-IN SYSTEM -->
+  <div id="systemView" class="system-view hidden">
+    <aside class="sidebar" id="sidebar">
+      <div class="side-brand">
+        <img src="assets/logo.png" alt="FindIt">
+        <strong>FindIt</strong>
+      </div>
+
+      <nav class="side-nav">
+        <button class="side-link active" data-section="dashboard">Dashboard</button>
+        <button class="side-link" data-section="lost">Lost items</button>
+        <button class="side-link" data-section="found">Found items</button>
+        <button class="side-link" data-section="search">Search items</button>
+        <button class="side-link" data-section="claims">Claims</button>
+        <button class="side-link" data-section="profile">Profile</button>
+      </nav>
+
+      <button class="logout" id="logoutBtn">Logout</button>
+    </aside>
+
+    <main class="system-main">
+      <button class="mobile-side-btn" id="sideToggle">☰</button>
+
+      <!-- Dashboard -->
+      <section class="system-section active-section" id="dashboardSection">
+        <div class="section-head">
+          <div>
+            <h1>Dashboard</h1>
+            <p>Welcome to your FindIt dashboard.</p>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card"><span>Lost items</span><strong>12</strong></div>
+          <div class="stat-card"><span>Found items</span><strong>8</strong></div>
+          <div class="stat-card"><span>Claims</span><strong>4</strong></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <div><h2>Recently reported items</h2><p>Latest lost and found reports.</p></div>
+            <button class="small-btn" data-section-go="search">View all</button>
+          </div>
+          <div class="item-grid compact-grid">
+            <article class="item-card">
+              <img src="assets/umbrella.jpg" alt="Pink Umbrella">
+              <div class="item-info"><span class="badge found">Found</span><h3>Pink Umbrella</h3><p>Library</p><small>Sept 4, 2026</small></div>
+            </article>
+            <article class="item-card">
+              <img src="assets/lanyard.jpg" alt="ICCT Lanyard">
+              <div class="item-info"><span class="badge found">Found</span><h3>ICCT Student ID</h3><p>Campus</p><small>Sept 5, 2026</small></div>
+            </article>
+            <article class="item-card">
+              <img src="assets/tumbler.jpg" alt="Blue Tumbler">
+              <div class="item-info"><span class="badge lost">Lost</span><h3>Blue Tumbler</h3><p>Gym</p><small>Sept 6, 2026</small></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lost -->
+      <section class="system-section" id="lostSection">
+        <div class="section-head"><div><h1>Lost Items</h1><p>Items reported as lost.</p></div><button class="small-btn">Report Lost Item</button></div>
+        <div class="item-grid">
+          <article class="item-card"><img src="assets/tumbler.jpg" alt="Blue Tumbler"><div class="item-info"><span class="badge lost">Lost</span><h3>Blue Tumbler</h3><p>Gym</p><small>Sept 6, 2026</small></div></article>
+          <article class="item-card"><img src="assets/earbuds.jpg" alt="White Earbuds"><div class="item-info"><span class="badge lost">Lost</span><h3>White Earbuds</h3><p>Comlab B4.22</p><small>Sept 5, 2026</small></div></article>
+          <article class="item-card"><img src="assets/umbrella.jpg" alt="Pink Umbrella"><div class="item-info"><span class="badge lost">Lost</span><h3>Pink Umbrella</h3><p>Library</p><small>Sept 4, 2026</small></div></article>
+        </div>
+      </section>
+
+      <!-- Found -->
+      <section class="system-section" id="foundSection">
+        <div class="section-head"><div><h1>Found Items</h1><p>Items reported as found.</p></div><button class="small-btn">Report Found Item</button></div>
+        <div class="item-grid">
+          <article class="item-card"><img src="assets/lanyard.jpg" alt="ICCT Lanyard"><div class="item-info"><span class="badge found">Found</span><h3>ICCT Student ID</h3><p>Campus</p><small>Sept 5, 2026</small></div></article>
+          <article class="item-card"><img src="assets/keys.jpg" alt="Set of House Keys"><div class="item-info"><span class="badge found">Found</span><h3>Set of House Keys</h3><p>Theater</p><small>Sept 30, 2026</small></div></article>
+          <article class="item-card"><img src="assets/umbrella.jpg" alt="Pink Umbrella"><div class="item-info"><span class="badge found">Found</span><h3>Pink Umbrella</h3><p>Library</p><small>Sept 4, 2026</small></div></article>
+        </div>
+      </section>
+
+      <!-- Search -->
+      <section class="system-section" id="searchSection">
+        <div class="section-head"><div><h1>Search Items</h1><p>Look up anything reported lost and found.</p></div></div>
+        <div class="search-box"><span>⌕</span><input id="itemSearch" type="search" placeholder="Search item name, location, or category..."><button id="clearSearch">×</button></div>
+        <div class="filter-row">
+          <button class="filter active" data-filter="all">All Items</button>
+          <button class="filter" data-filter="lost">Lost</button>
+          <button class="filter" data-filter="found">Found</button>
+          <button class="filter" data-filter="claimed">Claimed</button>
+          <button class="filter" data-filter="returned">Returned</button>
+        </div>
+
+        <div class="item-grid" id="searchGrid">
+          <article class="item-card searchable" data-status="found" data-text="pink umbrella library">
+            <img src="assets/umbrella.jpg" alt="Pink Umbrella"><div class="item-info"><span class="badge found">Found</span><h3>Pink Umbrella</h3><p>Library</p><small>Sept 4, 2026</small></div>
+          </article>
+          <article class="item-card searchable" data-status="found" data-text="set of house keys theater">
+            <img src="assets/keys.jpg" alt="Set of House Keys"><div class="item-info"><span class="badge found">Found</span><h3>Set of House Keys</h3><p>Theater</p><small>Sept 30, 2026</small></div>
+          </article>
+          <article class="item-card searchable" data-status="lost" data-text="icct student id campus room b4.44">
+           <img src="assets/lanyard.jpg"alt="ICCT Student ID"><div class="item-info"><span class="badge lost">Lost</span><h3>ICCT Student ID</h3><p>Room B4.44</p><small>Sept 14, 2026</small></div>
+          </article>
+          <article class="item-card searchable" data-status="lost" data-text="blue tumbler gym">
+            <img src="assets/tumbler.jpg" alt="Blue Tumbler"><div class="item-info"><span class="badge lost">Lost</span><h3>Blue Tumbler</h3><p>Gym</p><small>Sept 6, 2026</small></div>
+          </article>
+          <article class="item-card searchable" data-status="claimed" data-text="earphone white case comlab b4.22">
+            <img src="assets/earbuds.jpg" alt="White Earphone Case"><div class="item-info"><span class="badge claimed">Claimed</span><h3>Earphone (White case)</h3><p>Comlab B4.22</p><small>Sept 5, 2026</small></div>
+          </article>
+        </div>
+        <p id="noResults" class="no-results hidden">No items found.</p>
+      </section>
+
+      <!-- Claims -->
+      <section class="system-section" id="claimsSection">
+        <div class="section-head"><div><h1>Claims</h1><p>Track your submitted claim requests.</p></div></div>
+        <div class="empty-panel"><div class="empty-icon">✓</div><h2>No claim requests yet</h2><p>Your claim requests will appear here.</p></div>
+      </section>
+
+      <!-- Profile -->
+      <section class="system-section" id="profileSection">
+        <div class="section-head"><div><h1>Profile</h1><p>Manage your FindIt account.</p></div></div>
+        <div class="profile-card">
+          <div class="profile-avatar" id="profileInitial">F</div>
+          <div><h2 id="profileName">FindIt User</h2><p id="profileEmail">user@icct.edu.ph</p></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
